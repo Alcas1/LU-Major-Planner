@@ -1,3 +1,4 @@
+var http = require('http');  
 var express = require('express');
 var app = express();
 
@@ -7,9 +8,12 @@ app.use(express.static(__dirname + '/public'));
 
 // views is directory for all template files
 app.set('views', __dirname + '/views');
+app.engine('html', require('ejs').renderFile);
+app.set('view engine', 'html');
+
 
 app.get('/', function(request, response) {
-  response.render('pages/index');
+  response.render('index.html');
 });
 
 app.listen(app.get('port'), function() {
