@@ -2,7 +2,7 @@ var http = require('http');
 var express = require('express');
 var mongodb = require('mongodb');
 var MongoClient = mongodb.MongoClient;
-var url = 'mongodb://<dbuser>:<dbpassword>@ds045464.mongolab.com:45464/lumajorplanner';
+var url = 'mongodb://admin:admin@ds045464.mongolab.com:45464/lumajorplanner';
 var app = express();
 
 app.set('port', (process.env.PORT || 5000));
